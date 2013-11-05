@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="us">
+<head>
+	<meta charset="utf-8">
+	<title>Chess Client 1.0</title>
+	<!--jQuery-->
+	<link href="css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom.js"></script>
+	
+	<!--Fancy Box-->
+	<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js"></script>
+	
+	<!--Modified Date-->
+	<script src="js/dateModified/dateModified.js"></script>
+
+	<script>
+	$(function() {
+
+		var i = 0;
+		var timeOut = Math.floor((Math.random()*50)+1);
+		function loadBar() {           //  create a loop function
+		   setTimeout(function () {    //  call a 3s setTimeout when the loop is called
+			  $( "#progressbar" ).progressbar({value: i});
+			  i++;                     //  increment the counter
+			  if (i <= 100) {            //  if the counter < 10, call the loop function
+				 loadBar();             //  ..  again which will trigger another 
+			  }else{
+			  	$("#loadingText").val("Done!");
+			  	window.location.replace("mainPage.html");
+			  }
+		   }, timeOut) //  ..  setTimeout()
+		}
+		
+		$("a[href$='.jpg'],a[href$='.jpeg'],a[href$='.png'],a[href$='.gif'],a[href$='.swf']").attr('rel', 'gallery').fancybox(); //Auto magically turn any links to images into fancyBoxes!
+		loadBar()
+	});
+	</script>
+	<!--[if !IE 7]>
+		<style type="text/css">
+			#wrap {display:table;height:100%}
+		</style>
+	<![endif]-->
+	<style>
+	body{
+		font: 90.5% "Trebuchet MS", sans-serif;
+		margin: 150px;
+	}
+	.headers {
+		margin-top: 2em;
+		text-align:center; /* center horizontally */
+	}
+	#loadingText, #footerText {
+		text-align:center; /* center horizontally */
+	}
+	#wrapper {
+		min-height: 100%;
+	}
+	#main {
+		overflow:auto;
+		padding-bottom: 125px; /* must be same height as the footer */
+	}  
+	footer { 
+		position: relative;
+		margin-top: -125px; /* negative value of footer height */
+		height: 125px;
+		clear: both;
+		width: 100%;
+		height: 12%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	} 
+	/*Opera Fix*/
+	body:before {
+		content:"";
+		height:100%;
+		float:left;
+		width:0;
+		margin-top:-32767px;
+	}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header"></div>
+		
+		<div id="main">
+			<!-- Progressbar -->
+			<h2 class="headers">Loading...</h2>
+			<div id="progressbar"></div>
+
+			<!-- ui-dialog -->
+			<div id="loadingText" title="Loading">
+				<p>Loading... Please Wait</p>
+				<br>
+				<br>
+				<a href="pictures/jeff.swf"><p>Hahaha, stupid crafters!</p></a>
+			</div>
+		</div>
+		
+		<footer>
+				<div id="footerText" title="Dialog Title">
+					<div class="ui-widget">
+						<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em; margin-bottom: 10px;">
+							<div class="authers">
+								<p>Created by <em>Tommsy64</em> and <em>Dichlorodiphen</em></p>
+							</div>
+							<div id="lastModified">
+								<p>Error</p>
+							</div>
+						</div>
+					</div>
+				</div>
+		</footer>
+	</div>
+</body>
+</html>

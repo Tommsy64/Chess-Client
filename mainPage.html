@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="us">
+<head>
+	<meta charset="utf-8">
+	<title>Chess Client 1.0</title>
+	
+	<!--jQuery-->
+	<link href="css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom.js"></script>
+	
+	<!--Fancy Box-->
+	<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js"></script>
+	
+	<script>
+	$(function() {
+		
+		$( "#button" ).button();
+		$( "#radioset" ).buttonset();
+		
+		
+		$( "#tabs" ).tabs();
+		
+		
+		$( "#progressbar" ).progressbar({
+			value: 20
+		});
+		
+		$('.fancybox').fancybox({
+			padding : 0,
+			openEffect  : 'elastic',
+			width		: '90%',
+			height		: '90%',
+			fitToView	: true
+		});
+		
+		/*$(".various").fancybox({
+			maxWidth	: 800,
+			maxHeight	: 600,
+			fitToView	: false,
+			width		: '70%',
+			height		: '70%',
+			autoSize	: false,
+			closeClick	: false,
+			openEffect	: 'none',
+			closeEffect	: 'none'
+		});*/
+		$("a[href$='.jpg'],a[href$='.jpeg'],a[href$='.png'],a[href$='.gif'],a[href$='.swf']").attr('rel', 'gallery').fancybox(); //Auto magically turn any links to images into fancyBoxes!
+	});
+	</script>
+	
+	<!--CSS -->
+	<style>
+	body{
+		font: 62.5% "Trebuchet MS", sans-serif;
+		margin: 50px;
+	}
+	.headers {
+		margin-top: 2em;
+	}
+	.text {
+		color:#353543;
+	}
+	.title {
+	    color:#004016;
+	}
+	#footerText {
+		text-align:center; /* center horizontally */
+	}
+	html, body {
+		height: 100%;
+	}
+	#wrap {
+		min-height: 100%;
+	}
+	#main {
+		overflow:auto;
+		padding-bottom: 150px; /* must be same height as the footer */
+	}  
+	footer { 
+		position: relative;
+		margin-top: -150px; /* negative value of footer height */
+		height: 150px;
+		clear:both;
+		width:100%;
+		height:80px;
+		position:absolute;
+		bottom:0;
+		left:0;
+	} 
+	/*Opera Fix*/
+	body:before {
+		content:"";
+		height:100%;
+		float:left;
+		width:0;
+		margin-top:-32767px;
+	}
+
+	</style>
+</head>
+<body>
+
+<div id="wrapper">
+	<div id="header">
+		<h1>Welcome to Chess Client 1.0!</h1>
+	</div>
+	
+	<div id="main">
+		<!-- Tabs -->
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">Home</a></li>
+				<li><a href="#tabs-2">Proton</a></li>
+				<li><a href="#tabs-3">Games</a></li>
+			</ul>
+			<div id="tabs-1"></div>
+			<div id="tabs-2">
+				<a href="js/attraction1.html" class="fancybox fancybox.iframe">Attraction</a>
+			</div>
+			<div id="tabs-3">
+				<a href="http://www.learn4good.com/cms/upload/games/sports/swf/runandgun.swf" class="fancybox">RunNGun</a>
+			</div>
+		</div>
+		
+		<!-- ui-dialog -->
+		<div id="dialog" title="Dialog Title">
+			<p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel pretium elit. Donec pharetra imperdiet massa sit amet malesuada. Suspendisse potenti. Nam dictum massa sed magna ultricies, quis convallis elit suscipit. Pellentesque hendrerit, lacus quis volutpat vestibulum, justo tellus sodales magna, sed euismod sapien mauris id nulla. Maecenas sapien massa, congue non risus vitae, feugiat adipiscing erat. Sed consectetur at metus ac adipiscing. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse ac erat ante. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel vulputate odio. Sed at egestas sem. Donec convallis sagittis nisl, vitae bibendum magna congue vel. Phasellus et enim eu lacus pretium pellentesque in non ligula. Donec viverra eros nunc, nec pellentesque justo gravida vel. Sed viverra ultrices quam. Aenean ipsum risus, tempus nec cursus at, lobortis ac dolor. In quis vulputate lacus, sit amet congue tellus. Phasellus non facilisis nisi. Ut porta mollis nisi, ut laoreet diam tincidunt vel. Mauris velit nibh, convallis et elementum eget, rhoncus non leo. Morbi ultricies porttitor massa id pellentesque. In volutpat id mauris blandit ullamcorper. Nulla gravida luctus tellus pellentesque lobortis. Mauris scelerisque lacus sem, id eleifend lectus varius sed. Curabitur dictum enim ut ultrices porttitor. Cras iaculis turpis id purus eleifend pulvinar. Nullam lacinia sollicitudin diam, et viverra tortor lobortis sed. Curabitur metus est, rutrum ac ante id, mollis rutrum orci. Quisque hendrerit sed lorem lacinia sagittis. Nullam quis ligula felis. Pellentesque pharetra, risus vitae blandit condimentum, nibh dui malesuada mauris, non blandit lacus tellus sed velit. Nam sit amet posuere dui, non pharetra ipsum. Maecenas semper sapien non malesuada hendrerit. Duis nunc lectus, viverra sed vehicula quis, gravida ac augue. Proin sit amet dolor sit amet nibh tempor ornare.</em></p>
+		</div>
+	</div>
+
+	<footer>
+			<div id="footerText" title="Dialog Title">
+				<div class="ui-widget">
+					<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+						<p>Created by Tommsy64 and Dichlorodiphen</p>
+						<p>Last update: Friday, November 1 | 2013</p>
+					</div>
+				</div>
+			</div>
+	</footer>
+</div>
+</body>
+</html>
