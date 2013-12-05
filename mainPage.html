@@ -13,6 +13,9 @@
 	<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js"></script>
 	
+	<!--Modified Date-->
+	<script src="js/dateModified/dateModified.js"></script>
+	
 	<script>
 	$(function() {
 		
@@ -68,9 +71,6 @@
 	.title {
 	    color:#004016;
 	}
-	#footerText {
-		text-align:center; /* center horizontally */
-	}
 	html, body {
 		height: 100%;
 	}
@@ -91,6 +91,7 @@
 		position:absolute;
 		bottom:0;
 		left:0;
+		text-align:center; /* center horizontally */
 	} 
 	/*Opera Fix*/
 	body:before {
@@ -121,93 +122,94 @@
 			<div id="tabs-2">
 				<a href="js/proton/configs/attraction1.html" class="fancybox fancybox.iframe">Attraction</a>
 			</div>
-			<div id="tabs-3">
-				<a href="http://www.learn4good.com/cms/upload/games/sports/swf/runandgun.swf" data-fancybox-group="RunNGun" class="fancybox">RunNGun</a>
-				<a href="adobe/tanks.swf" data-fancybox-group="tanks" class="fancybox">Tanks</a>
-				<br/>
-				<div id="accordion">					
-					<h3>Duck Life</h3>
-					<div>
-						<a href="adobe/duck-life-1.swf" data-fancybox-group="DuckLife1">Duck Life 1</a>
-						<br/>
-						<a href="adobe/duck-life-2.swf" data-fancybox-group="DuckLife2">Duck Life 2</a>
-						<br/>
-						<a href="adobe/duck-life-3.swf" data-fancybox-group="DuckLife3">Duck Life 3</a>
-						<br/>
-						<a href="adobe/duck-life-4.swf" data-fancybox-group="DuckLife4">Duck Life 4</a>
-					</div>
+				<div id="tabs-3">
+					<a href="http://www.learn4good.com/cms/upload/games/sports/swf/runandgun.swf" data-fancybox-group="RunNGun" class="fancybox">RunNGun</a>
+					<a href="adobe/tanks.swf" data-fancybox-group="tanks" class="fancybox">Tanks</a>
+					<br/>
+					<div id="accordion">					
+						<h3>Duck Life</h3>
+						<div>
+							<a href="adobe/duck-life-1.swf" data-fancybox-group="DuckLife1">Duck Life 1</a>
+							<br/>
+							<a href="adobe/duck-life-2.swf" data-fancybox-group="DuckLife2">Duck Life 2</a>
+							<br/>
+							<a href="adobe/duck-life-3.swf" data-fancybox-group="DuckLife3">Duck Life 3</a>
+							<br/>
+							<a href="adobe/duck-life-4.swf" data-fancybox-group="DuckLife4">Duck Life 4</a>
+						</div>
 					
-					<h3>Run</h3>
-					<div>
-						<a href="adobe/run.swf" data-fancybox-group="run">Run</a>
-						<br/>
-						<a href="http://www.coolmath-games.com/0-run-2/Run2a.swf" data-fancybox-group="run2">Run 2</a> 
-					</div>
+						<h3>Run</h3>
+						<div>
+							<a href="adobe/run.swf" data-fancybox-group="run">Run</a>
+							<br/>
+							<a href="http://www.coolmath-games.com/0-run-2/Run2a.swf" data-fancybox-group="run2">Run 2</a> 
+						</div>
 					
-					<h3>Happy Wheels</h3>
-					<div>
-						<a href="adobe/HappyWheelsDemo.swf" data-fancybox-group="HappyWheelsDemo">Happy Wheels Demo</a>
-						<!--<br/>
-						<a href="adobe/HappyWheelsFull/Happy-Wheels.swf" data-fancybox-group="HappyWheelsFull">Happy Wheels Full</a>-->
-					</div>
+						<h3>Happy Wheels</h3>
+						<div>
+							<a href="adobe/HappyWheelsDemo.swf" data-fancybox-group="HappyWheelsDemo">Happy Wheels Demo</a>
+							<!--<br/>
+							<a href="adobe/HappyWheelsFull/Happy-Wheels.swf" data-fancybox-group="HappyWheelsFull">Happy Wheels Full</a>-->
+						</div>
 					
-					<h3>Blosics</h3>
-					<div>
-						<a href="adobe/blosics.swf" data-fancybox-group="Blosics">Blosics</a>
-						<br/>
-						<a href="adobe/blosics2.swf" data-fancybox-group="Blosics2">Blosics 2</a>
-					</div>
+						<h3>Blosics</h3>
+						<div>
+							<a href="adobe/blosics.swf" data-fancybox-group="Blosics">Blosics</a>
+							<br/>
+							<a href="adobe/blosics2.swf" data-fancybox-group="Blosics2">Blosics 2</a>
+						</div>
 					
-					<h3>Pyro</h3>
-					<div>
-						<a href="adobe/pyro.swf" data-fancybox-group="Pyro">Pyro</a>
-					</div>
+						<h3>Pyro</h3>
+						<div>
+							<a href="adobe/pyro.swf" data-fancybox-group="Pyro">Pyro</a>
+						</div>
 					
-					<h3>Achievement Unlocked</h3>
-					<div>
-						<a href="adobe/achievement-unlocked-1.swf" data-fancybox-group="AchievementUnlocked1">Achievement Unlocked 1</a>
-						<br/>
-						<a href="adobe/achievement-unlocked-2.swf" data-fancybox-group="AchievementUnlocked2">Achievement Unlocked 2</a>
-					</div>
+						<h3>Achievement Unlocked</h3>
+						<div>
+							<a href="adobe/achievement-unlocked-1.swf" data-fancybox-group="AchievementUnlocked1">Achievement Unlocked 1</a>
+							<br/>
+							<a href="adobe/achievement-unlocked-2.swf" data-fancybox-group="AchievementUnlocked2">Achievement Unlocked 2</a>
+						</div>
 					
-					<h3>Bloons</h3>
-					<div>
-						<a href="adobe/bloons.swf" data-fancybox-group="Bloons">Bloons</a>
-						<br/>
-						<a href="adobe/bloonstowerdefense4.swf" data-fancybox-group="BloonsTowerDefense4">Bloons Tower Defense 4</a>
-					</div>
+						<h3>Bloons</h3>
+						<div>
+							<a href="adobe/bloons.swf" data-fancybox-group="Bloons">Bloons</a>
+							<br/>
+							<a href="adobe/bloonstowerdefense4.swf" data-fancybox-group="BloonsTowerDefense4">Bloons Tower Defense 4</a>
+						</div>
 					
-					<h3>Interactive Buddy</h3>
-					<div>
-						<a href="adobe/interactivebuddy.swf" data-fancybox-group="InteractiveBuddy1">Interactive Buddy 1</a>
-					</div>
+						<h3>Interactive Buddy</h3>
+						<div>
+							<a href="adobe/interactivebuddy.swf" data-fancybox-group="InteractiveBuddy1">Interactive Buddy 1</a>
+						</div>
 					
-					<h3>Upgrade Complete</h3>
-					<div>
-						<a href="adobe/UpgradeComplete1.swf" data-fancybox-group="UpgradeComplete1">Upgrade Complete 1</a>
-						<a href="adobe/UpgradeComplete2.swf" data-fancybox-group="UpgradeComplete2">Upgrade Complete 2</a>
+						<h3>Upgrade Complete</h3>
+						<div>
+							<a href="adobe/UpgradeComplete1.swf" data-fancybox-group="UpgradeComplete1">Upgrade Complete 1</a>
+							<a href="adobe/UpgradeComplete2.swf" data-fancybox-group="UpgradeComplete2">Upgrade Complete 2</a>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 		
-		<!-- ui-dialog -->
-		<div id="dialog" title="Dialog Title">
-			<p class="mainbodytext">Dummy text does not go here</p>
+			<!-- ui-dialog -->
+			<div id="dialog" title="Dialog Title">
+				<p class="mainbodytext">Dummy text does not go here</p>
+			</div>
 		</div>
-	</div>
 
-	<footer>
-			<div id="footerText">
+		<footer>
 				<div class="ui-widget">
-					<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
-						<p>Created by Tommsy64 and Dichlorodiphen</p>
-						<p>Last update: Friday, November 1 | 2013</p>
-						<img src="pictures/logo.png" />
+					<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em; margin-bottom: 10px;">
+						<div class="authors">
+							<p>Created by Tommsy64 and Dichlorodiphen</p>
+						</div>
+						<div id="lastModified">
+							<p>Error</p>
+						</div>
 					</div>
 				</div>
-			</div>
-	</footer>
-</div>
+		</footer>
+	</div>
 </body>
 </html>
