@@ -43,15 +43,11 @@
 		</style>
 	<![endif]-->
 	<style>
-	body{
-		font: 90.5% "Trebuchet MS", sans-serif;
-		margin: 150px;
-	}
 	.headers {
 		margin-top: 2em;
 		text-align:center; /* center horizontally */
 	}
-	#loadingText, #footerText {
+	#loadingText, footer {
 		text-align:center; /* center horizontally */
 	}
 	#wrapper {
@@ -60,7 +56,12 @@
 	#main {
 		overflow:auto;
 		padding-bottom: 125px; /* must be same height as the footer */
-	}  
+		font: 90.5% "Trebuchet MS", sans-serif;
+		margin: 150px;
+	} 
+	footer {
+		font: 62.5% "Trebuchet MS", sans-serif;
+	} 
 	footer { 
 		position: relative;
 		margin-top: -125px; /* negative value of footer height */
@@ -101,15 +102,13 @@
 		</div>
 		
 		<footer>
-				<div id="footerText" title="Dialog Title">
-					<div class="ui-widget">
-						<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em; margin-bottom: 10px;">
-							<div class="authors">
-								<p>Created by <em>Tommsy64</em> and <em>Dichlorodiphen</em></p>
-							</div>
-							<div id="lastModified">
-								<p>Error</p>
-							</div>
+				<div class="ui-widget">
+					<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em; margin-bottom: 10px;">
+						<div class="authors">
+							<p>Created by Tommsy64 and Dichlorodiphen</p>
+						</div>
+						<div id="lastModified">
+							<p>Error</p>
 						</div>
 					</div>
 				</div>
