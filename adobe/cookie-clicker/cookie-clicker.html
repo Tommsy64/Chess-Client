@@ -10,14 +10,24 @@
 
 <script>
 	$(function() {
-		$( "#button").button();
-	}
+		$("#button").button();
+		
+		$("#button").click(function(){
+			window.location.replace("../../mainPage.html");
+		});
+	});
 </script>
 
 <style>
+	body {
+		max-height:100%;
+	}
 	iframe {
 		width:100%;
 		min-height:90%;
+	}
+	footer {
+		max-height:10%;
 	}
 </style>
 
@@ -31,9 +41,10 @@
   ga('create', 'UA-46229693-1', 'tommsy64.github.io');
   ga('send', 'pageview');
 </script>
+
 </head>
 <body>
-<iframe src="http://orteil.dashnet.org/cookieclicker/">Your browser does not support iFrames, please upgrade to a newer one.</iframe>
-<button id="button">Back</button>
+	<iframe src="http://orteil.dashnet.org/cookieclicker/">Your browser does not support iFrames, please upgrade to a newer one.</iframe>
+	<button id="button">Go Back</button>
 </body>
 </html>
