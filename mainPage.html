@@ -5,13 +5,29 @@
 	<title>Chess Client 1.0</title>
 	
 	<!--jQuery-->
-	<link href="css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-	<script src="js/jquery-1.9.1.js"></script>
-	<script src="js/jquery-ui-1.10.3.custom.js"></script>
+	<link href="css/ui-lightness/jquery-ui-1.10.3.custom.min.css" rel="stylesheet">
+	<script src="js/jquery/jquery-1.9.1.js"></script>
+	<script src="js/jquery/jquery.mousewheel-3.0.6.pack.js"></script>
+	<script src="js/jquery/jquery-ui-1.10.3.custom.min.js"></script>
 	
 	<!--Fancy Box-->
-	<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
-	<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js"></script>
+
+		<!-- Add fancyBox main JS and CSS files -->
+		<script type="text/javascript" src="js/fancybox/jquery.fancybox.min.js"></script>
+		<link rel="stylesheet" href="css/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+
+		<!-- Add Button helper (this is optional) -->
+		<link rel="stylesheet" type="text/css" href="css/fancybox/jquery.fancybox-buttons.css?v=1.0.5" />
+		<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+		<!-- Add Thumbnail helper (this is optional) -->
+		<link rel="stylesheet" type="text/css" href="css/fancybox/jquery.fancybox-thumbs.css?v=1.0.7" />
+		<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+		<!-- Add Media helper (this is optional) -->
+		<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+		
+	<!-- End of fancy box -->
 	
 	<!--Modified Date-->
 	<script src="js/dateModified/dateModified.js"></script>
@@ -101,7 +117,23 @@
 		width:0;
 		margin-top:-32767px;
 	}
+	.iframeWindow {
+		height:75%;
+		width:99%;
+	}
 	</style>
+
+	<!--Google Analytics-->		
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-46229693-1', 'tommsy64.github.io');
+	  ga('send', 'pageview');
+
+	</script>
 </head>
 <body>
 
@@ -115,89 +147,109 @@
 		<div id="tabs">
 			<ul>
 				<li><a href="#tabs-1">Home</a></li>
-				<li><a href="#tabs-2">Proton</a></li>
-				<li><a href="#tabs-3">Games</a></li>
+				<li><a href="#tabs-2">Managebac</a></li>
+				<li><a href="#tabs-3">Proton</a></li>
+				<li><a href="#tabs-4">Videos</a></li>
+				<li><a href="#tabs-5">Games</a></li>
 			</ul>
-			<div id="tabs-1"></div>
-			<div id="tabs-2">
-				<a href="js/proton/configs/attraction1.html" class="fancybox fancybox.iframe">Attraction</a>
+			<div id="tabs-1">
+				<h1>News</h1>
+				New Chess Client Wiki right <a href="https://github.com/Tommsy64/Chess-Client/wiki">here</a>!
 			</div>
-				<div id="tabs-3">
-					<a href="http://www.learn4good.com/cms/upload/games/sports/swf/runandgun.swf" data-fancybox-group="RunNGun" class="fancybox">RunNGun</a>
-					<a href="adobe/tanks.swf" data-fancybox-group="tanks" class="fancybox">Tanks</a>
-					<br/>
-					<div id="accordion">					
-						<h3>Duck Life</h3>
-						<div>
-							<a href="adobe/duck-life-1.swf" data-fancybox-group="DuckLife1">Duck Life 1</a>
-							<br/>
-							<a href="adobe/duck-life-2.swf" data-fancybox-group="DuckLife2">Duck Life 2</a>
-							<br/>
-							<a href="adobe/duck-life-3.swf" data-fancybox-group="DuckLife3">Duck Life 3</a>
-							<br/>
-							<a href="adobe/duck-life-4.swf" data-fancybox-group="DuckLife4">Duck Life 4</a>
-						</div>
-					
-						<h3>Run</h3>
-						<div>
-							<a href="adobe/run.swf" data-fancybox-group="run">Run</a>
-							<br/>
-							<a href="http://www.coolmath-games.com/0-run-2/Run2a.swf" data-fancybox-group="run2">Run 2</a> 
-						</div>
-					
-						<h3>Happy Wheels</h3>
-						<div>
-							<a href="adobe/HappyWheelsDemo.swf" data-fancybox-group="HappyWheelsDemo">Happy Wheels Demo</a>
-							<br/>
-							<a href="adobe/HappyWheelsFull/Happy-Wheels.swf" data-fancybox-group="HappyWheelsFull">Happy Wheels Full</a>
-						</div>
-					
-						<h3>Blosics</h3>
-						<div>
-							<a href="adobe/blosics.swf" data-fancybox-group="Blosics">Blosics</a>
-							<br/>
-							<a href="adobe/blosics2.swf" data-fancybox-group="Blosics2">Blosics 2</a>
-						</div>
-					
-						<h3>Pyro</h3>
-						<div>
-							<a href="adobe/pyro.swf" data-fancybox-group="Pyro">Pyro</a>
-						</div>
-					
-						<h3>Achievement Unlocked</h3>
-						<div>
-							<a href="adobe/achievement-unlocked-1.swf" data-fancybox-group="AchievementUnlocked1">Achievement Unlocked 1</a>
-							<br/>
-							<a href="adobe/achievement-unlocked-2.swf" data-fancybox-group="AchievementUnlocked2">Achievement Unlocked 2</a>
-						</div>
-					
-						<h3>Bloons</h3>
-						<div>
-							<a href="adobe/bloons.swf" data-fancybox-group="Bloons">Bloons</a>
-							<br/>
-							<a href="adobe/bloonstowerdefense4.swf" data-fancybox-group="BloonsTowerDefense4">Bloons Tower Defense 4</a>
-						</div>
-					
-						<h3>Interactive Buddy</h3>
-						<div>
-							<a href="adobe/interactivebuddy.swf" data-fancybox-group="InteractiveBuddy1">Interactive Buddy 1</a>
-						</div>
-					
-						<h3>Upgrade Complete</h3>
-						<div>
-							<a href="adobe/UpgradeComplete1.swf" data-fancybox-group="UpgradeComplete1">Upgrade Complete 1</a>
-							<br/>
-							<a href="adobe/UpgradeComplete2.swf" data-fancybox-group="UpgradeComplete2">Upgrade Complete 2</a>
-						</div>
+			<div id="tabs-2" class="iframeWindow">
+				<iframe src="https://saintandrews.managebac.com/" class="iframeWindow"></iframe>
+			</div>
+			<div id="tabs-3">
+				<a href="js/proton/configs/attraction1.html" class="fancybox fancybox.iframe"><h1>Normal View</h1></a>
+				<br>
+				<a href="js/proton/configs/attraction1.html"><h1>Fullscreen</h1></a>
+			</div>
+			<div id="tabs-4">
+				<video width="320" height="240" controls>
+				  <source src="videos/kitty.mp4" type="video/mp4">
+				Your browser does not support the video tag. Use Google Chrome.
+				</video>
+			</div>
+			<div id="tabs-5">
+				<a href="http://www.learn4good.com/cms/upload/games/sports/swf/runandgun.swf" data-fancybox-group="RunNGun" class="fancybox">RunNGun</a>
+				<a href="adobe/tanks.swf" data-fancybox-group="tanks" class="fancybox">Tanks</a>
+				<br/>
+				<div id="accordion">			
+					<h3>Cookie Clicker</h3>
+					<div>
+						<a href="http://orteil.dashnet.org/cookieclicker/" class="fancybox fancybox.iframe">Normal View</a>
+						<br>
+						<a href="adobe/cookie-clicker/cookie-clicker.html">Fullscreen</a>
 					</div>
-				</div>
-			</div>
-		
-			<!-- ui-dialog -->
-			<div id="dialog" title="Dialog Title">
-				<p class="mainbodytext">Dummy text does not go here</p>
+							
+					<h3>Duck Life</h3>
+					<div>
+						<a href="adobe/duck-life-1.swf" data-fancybox-group="DuckLife1">Duck Life 1</a>
+						<br/>
+						<a href="adobe/duck-life-2.swf" data-fancybox-group="DuckLife2">Duck Life 2</a>
+						<br/>
+						<a href="adobe/duck-life-3.swf" data-fancybox-group="DuckLife3">Duck Life 3</a>
+						<br/>
+						<a href="adobe/duck-life-4.swf" data-fancybox-group="DuckLife4">Duck Life 4</a>
+					</div>
+			
+					<h3>Run</h3>
+					<div>
+						<a href="adobe/run.swf" data-fancybox-group="run">Run</a>
+						<br/>
+						<a href="http://www.coolmath-games.com/0-run-2/Run2a.swf" data-fancybox-group="run2">Run 2</a> 
+					</div>
+			
+					<h3>Happy Wheels</h3>
+					<div>
+						<a href="adobe/HappyWheelsDemo.swf" data-fancybox-group="HappyWheelsDemo">Happy Wheels Demo</a>
+						<br/>
+						<a href="adobe/HappyWheelsFull/Happy-Wheels.swf" data-fancybox-group="HappyWheelsFull">Happy Wheels Full</a>
+					</div>
+			
+					<h3>Blosics</h3>
+					<div>
+						<a href="adobe/blosics.swf" data-fancybox-group="Blosics">Blosics</a>
+						<br/>
+						<a href="adobe/blosics2.swf" data-fancybox-group="Blosics2">Blosics 2</a>
+					</div>
+			
+					<h3>Pyro</h3>
+					<div>
+						<a href="adobe/pyro.swf" data-fancybox-group="Pyro">Pyro</a>
+					</div>
+			
+					<h3>Achievement Unlocked</h3>
+					<div>
+						<a href="adobe/achievement-unlocked-1.swf" data-fancybox-group="AchievementUnlocked1">Achievement Unlocked 1</a>
+						<br/>
+						<a href="adobe/achievement-unlocked-2.swf" data-fancybox-group="AchievementUnlocked2">Achievement Unlocked 2</a>
+					</div>
+			
+					<h3>Bloons</h3>
+					<div>
+						<a href="adobe/bloons.swf" data-fancybox-group="Bloons">Bloons</a>
+						<br/>
+						<a href="adobe/bloonstowerdefense4.swf" data-fancybox-group="BloonsTowerDefense4">Bloons Tower Defense 4</a>
+						<br/>
+						<a href="adobe/btd5.swf" data-fancybox-group="BloonsTowerDefense5">Bloons Tower Defense 5</a>
+					</div>
+			
+					<h3>Interactive Buddy</h3>
+					<div>
+						<a href="adobe/interactivebuddy.swf" data-fancybox-group="InteractiveBuddy1">Interactive Buddy 1</a>
+					</div>
+			
+					<h3>Upgrade Complete</h3>
+					<div>
+						<a href="adobe/UpgradeComplete1.swf" data-fancybox-group="UpgradeComplete1">Upgrade Complete 1</a>
+						<br/>
+						<a href="adobe/UpgradeComplete2.swf" data-fancybox-group="UpgradeComplete2">Upgrade Complete 2</a>
+					</div>
+				</div>				
 			</div>
 		</div>
+	</div>
 
 		<footer>
 				<div class="ui-widget">
