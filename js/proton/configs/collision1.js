@@ -18,6 +18,10 @@ function Main() {
 	canvas.addEventListener('mousedown', mousedownHandler, false);
 	canvas.addEventListener('mouseup', mouseupHandler, false);
 	canvas.addEventListener('mousemove', mousemoveHandler, false);
+	window.onresize = function(e) {
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+	}
 }
 
 function createProton() {
