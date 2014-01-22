@@ -4,7 +4,7 @@ var proton;
 var renderer;
 var emitter;
 
-Main();
+setTimeout(Main, 500);
 
 function Main() {
 	canvas = document.getElementById("protonCanvas");

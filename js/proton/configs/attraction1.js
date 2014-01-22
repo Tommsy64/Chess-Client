@@ -8,7 +8,7 @@ var _mousedown = false;
 var mouseObj;
 var attractionBehaviour, crossZoneBehaviour;
 
-Main();
+setTimeout(Main, 500);
 
 function Main() {
 	canvas = document.getElementById("protonCanvas");

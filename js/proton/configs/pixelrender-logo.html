@@ -2,11 +2,37 @@
 <html lang="us">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Collision</title>
+<title>Pixel Renderer Logo</title>
 <meta charset="utf-8">
+
+<style type="text/css">
+	body {
+		background-color: #333333;
+		margin: 0px;
+		overflow: hidden;
+	}
+	#container {
+		width: 1003px;
+		height: 610px;
+		margin-top: 50px;
+		margin-left: -501px;
+		left: 50%;
+		position: absolute;
+		background: #000;
+		overflow: hidden;
+	}
+
+	#protonCanvas {
+		background: #000;
+	}
+</style>
 
 <!--Proton-->
 <script src="../proton-1.0.0.min.js"></script>
+
+<!--Pixel Renderer-->
+<script src="./pixelrender/PxLoader.js"></script>
+<script src="./pixelrender/PxLoaderImage.js"></script>
 
 <!--Google Analytics-->		
 <script>
@@ -21,6 +47,6 @@
 </head>
 <body>
 <canvas id="protonCanvas" width="100%" height="100%">Error, canvas is not supported. Your browser is most likely outdated</canvas>
-<script src="collision1.js"></script>
+<script src="pixelrender-logo.js"></script>
 </body>
 </html>
