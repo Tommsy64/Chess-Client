@@ -97,6 +97,9 @@
 		overflow:auto;
 		padding-bottom: 150px; /* must be same height as the footer */
 	}  
+	#subfooter { 
+		margin-top: -100px;
+	} 
 	footer { 
 		position: relative;
 		margin-top: -150px; /* negative value of footer height */
@@ -151,7 +154,6 @@
 				<li><a href="#tabs-3">Proton</a></li>
 				<li><a href="#tabs-4">Videos</a></li>
 				<li><a href="#tabs-5">Games</a></li>
-				<li><a href="#tabs-6">Testing</a></li>
 			</ul>
 			<div id="tabs-1">
 				<h1>News</h1>
@@ -159,7 +161,7 @@
 				<br />
 				New Chess Client Wiki right <a href="https://github.com/Tommsy64/Chess-Client/wiki">here</a>!
 				<br />
-				<img class="headers" src="img/logo.jpg" />
+				<img class="headers" src="img/logo1568x782.jpg" width="784" height="391"/>
 			</div>
 			<div id="tabs-2" class="iframeWindow">
 				<iframe src="https://saintandrews.managebac.com/" class="iframeWindow"></iframe>
@@ -261,36 +263,6 @@
 						<a href="http://www.andkon.com/arcade/tetris/cashmachine/cashmachine.swf" data-fancybox-group="cashmachine">Cash Machine</a>
 					</div>
 				</div>		
-			</div>
-			<div id="tabs-6" class="iframeWindow">
-				<p>If you click on the "Hide" button, I will disappear.</p>
-				<button id="hide">Hide</button>
-				<button id="show">Show</button>
-
-				<br />
-
-				<button id="animate">Start Animation</button>
-
-				<div id="moveThis" style="background:#98bf21;height:50px;width:50px;position:absolute;">Made by SAS Coders :)</div>
-				
-				<script>
-					$(document).ready(function(){
-						$("#hide").click(function(){
-							$("p").hide();
-						});
-						$("#show").click(function(){
-							$("p").show();
-						});
-						$("#animate").click(function(){
-							$("#moveThis").animate({
-								left:'250px',
-								height:'250px',
-								width:'250px',
-								right: '50px'
-							});
-						});
-					});
-				</script>
 			</div>
 		</div>
 	</div>
