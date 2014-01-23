@@ -12,8 +12,13 @@ setTimeout(Main, 400);
 
 function Main() {
 	canvas = document.getElementById("protonCanvas");
-	canvas.width = 1003;
-	canvas.height = 610;
+	
+	// canvas.width = 1003;
+	// canvas.height = 610;
+	
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+	
 	context = canvas.getContext('2d');
 
 	initBehaviours();
