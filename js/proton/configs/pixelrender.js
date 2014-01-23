@@ -11,7 +11,7 @@ var rootIndex = 1;
 setTimeout(Main, 400);
 
 function Main() {
-	canvas = document.getElementById("testCanvas");
+	canvas = document.getElementById("protonCanvas");
 	canvas.width = 1003;
 	canvas.height = 610;
 	context = canvas.getContext('2d');
@@ -25,9 +25,9 @@ function loadImage() {
 	logoZone = [];
 	var logo = [];
 	var loader = new PxLoader();
-	logo[0] = loader.addImage('../../../img/logo1.png');
-	logo[1] = loader.addImage('../../../img/logo2.png');
-	logo[2] = loader.addImage('../../../img/logo3.png');
+	logo[0] = loader.addImage('../../../img/logos/logo1.png');
+	logo[1] = loader.addImage('../../../img/logos/logo2.png');
+	logo[2] = loader.addImage('../../../img/logos/logo3.png');
 
 	loader.addCompletionListener(function() {
 
