@@ -39,10 +39,7 @@
 			// Update some stuff.
 			$('#request').html( $('<a/>').attr( 'href', url ).text( url ) );
 			$('#response').html( 'Loading...' );
-			
-			// Test to see if HTML mode.
-			if ( /mode=native/.test( url ) ) {
-			  
+
 			  // Make GET request.
 			  $.get( url, function(data){
 				
@@ -53,21 +50,7 @@
 				
 				SyntaxHighlighter.highlight();
 			  });
-			  
-			} else {
-			  
-			  // Make JSON request.
-			  $.getJSON( url, function(data){
-				
-				$('#response')
-				  .html( '<pre class="brush:js"/>' )
-				  .find( 'pre' )
-					.text( JSON.stringify( data, null, 2 ) );
-				
-				SyntaxHighlighter.highlight();
-			  });
-			}
-			
+		  
 			// Prevent default form submit action.
 			return false;
 		  });
@@ -79,20 +62,6 @@
 		  
 		  // Disable AJAX caching.
 		  $.ajaxSetup({ cache: false });
-		  
-		  // Disable dependent checkboxes as necessary.
-		  $('input:radio').click(function(){
-			var that = $(this),
-			  c1 = 'dependent-' + that.attr('name'),
-			  c2 = c1 + '-' + that.val();
-			
-			that.closest('form')
-			  .find( '.' + c1 + ' input' )
-				.attr( 'disabled', 'disabled' )
-				.end()
-			  .find( '.' + c2 + ' input' )
-				.removeAttr( 'disabled' );
-		  });
 		  
 		  // Clicking sample remote urls should populate the "Remote URL" box.
 		  $('#sample a').click(function(){
@@ -156,5 +125,11 @@
 	  </div>
 	  <input class="submit" type="submit" name="submit" value="Submit">
 	</form>
+	
+	<h3>Request URL</h3>
+	<p id="request">N/A, click Submit!</p>
+
+	<h3>Simple PHP Proxy response</h3>
+	<div id="response">N/A, click Submit!</div>
 </body>
 </html>
