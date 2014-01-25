@@ -47,8 +47,6 @@
 				  .html( '<pre class="brush:xml"/>' )
 				  .find( 'pre' )
 					.text( data );
-				
-				SyntaxHighlighter.highlight();
 			  });
 		  
 			// Prevent default form submit action.
@@ -97,32 +95,6 @@
 		<a href="http://github.com/cowboy/php-simple-proxy/raw/master/examples/simple/json_sample.js">a sample JSON (not JSONP) request</a>,
 		<a href="http://github.com/omg404errorpage">a 404 error page</a>
 	  </p>
-	  <div>
-		<label>
-		  <input type="radio" name="mode" value="native" disabled="disabled">
-		  Native <i>(disabled by default)</i>
-		</label>
-	  </div>
-	  <div>
-		<label>
-		  <input type="radio" name="mode" value="json" checked="checked" disabled="disabled">
-		  JSON
-		</label>
-	  </div>
-	  <div class="dependent-mode dependent-mode-json indent">
-		<div>
-		  <label>
-			<input type="checkbox" name="full_headers" value="1" checked="checked">
-			Full Headers
-		  </label>
-		</div>
-		<div>
-		  <label>
-			<input type="checkbox" name="full_status" value="1" checked="checked">
-			Full Status
-		  </label>
-		</div>
-	  </div>
 	  <input class="submit" type="submit" name="submit" value="Submit">
 	</form>
 	
