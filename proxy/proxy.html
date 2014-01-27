@@ -31,41 +31,12 @@
 	
 	<script>
 		$(function(){	  
-		  // Handle form submit.
-		  $('#params').submit(function(){
-			var proxy = 'ba-simple-proxy.php',
-			  url = proxy + '?' + $('#params').serialize();
-			
-			// Update some stuff.
-			$('#request').html( $('<a/>').attr( 'href', url ).text( url ) );
-			$('#response').html( 'Loading...' );
+			var p = Proxy.create({
+			get: function(proxy, name) {
+				return 'Hello, '+ name;
 
-			  // Make GET request.
-			  $.get( url, function(data){
-				
-				$('#response')
-				  .html( '<pre class="brush:xml"/>' )
-				  .find( 'pre' )
-					.text( data );
-			  });
-		  
-			// Prevent default form submit action.
-			return false;
-		  });
-		  
-		  // Submit the form on page load if ?url= is passed into the example page.
-		  if ( $('#url').val() !== '' ) {
-			$('#params').submit();
-		  }
-		  
-		  // Disable AJAX caching.
-		  $.ajaxSetup({ cache: false });
-		  
-		  // Clicking sample remote urls should populate the "Remote URL" box.
-		  $('#sample a').click(function(){
-			$('#url').val( $(this).attr( 'href' ) );
-			return false;
-		  });
+				}
+			});
 		});
 	</script>
 	
@@ -82,26 +53,6 @@
 	</script>
 </head>
 <body>
-	<form id="params" method="get" action="">
-	  <div>
-		<label>
-		  <b>Remote URL</b>
-		  <input id="url" class="text" type="text" name="url" value="">
-		</label>
-	  </div>
-	  <p id="sample">
-		..or try these sample Remote URLs:
-		<a href="http://github.com/">GitHub</a>,
-		<a href="http://github.com/cowboy/php-simple-proxy/raw/master/examples/simple/json_sample.js">a sample JSON (not JSONP) request</a>,
-		<a href="http://github.com/omg404errorpage">a 404 error page</a>
-	  </p>
-	  <input class="submit" type="submit" name="submit" value="Submit">
-	</form>
-	
-	<h3>Request URL</h3>
-	<p id="request">N/A, click Submit!</p>
 
-	<h3>Simple PHP Proxy response</h3>
-	<div id="response">N/A, click Submit!</div>
 </body>
 </html>
