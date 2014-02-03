@@ -42,6 +42,7 @@ function loadImage() {
 	var loader = new PxLoader();
 	logo[0] = loader.addImage('../../../img/logos/google.png');
 	logo[1] = loader.addImage('../../../img/logos/twitter.png');
+	logo[2] = loader.addImage('../../../img/logos/facebook.png');
 
 	loader.addCompletionListener(function() {
 
