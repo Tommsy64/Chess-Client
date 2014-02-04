@@ -81,6 +81,21 @@
 			  $("#wsasIframe").attr("src","http://www.useducationtv.com/main.aspx?sid=18094&pid=21235");
 		});
 		
+		$( "#newselaButton" )
+			.click(function( event ) {
+			  $("#newselaIframe").attr("src","http://www.newsela.com/");
+		});
+		
+		$( "#biblionasiumButton" )
+			.click(function( event ) {
+			  $("#biblionasiumIframe").attr("src","https://www.biblionasium.com/");
+		});
+		
+		$( "#managebacButton" )
+			.click(function( event ) {
+			  $("#managebacIframe").attr("src","https://saintandrews.managebac.com/");
+		});
+		
 		/*$(".various").fancybox({
 			maxWidth	: 800,
 			maxHeight	: 600,
@@ -178,9 +193,9 @@
 		<div id="tabs">
 			<ul>
 				<li><a href="#tabs-1">Home</a></li>
-				<li><a href="#tabs-2">Managebac</a></li>
-				<li><a href="#tabs-3">Biblionasium</a></li>
-				<li><a href="#tabs-4">Newsela</a></li>
+				<li><a href="#tabs-2" id="managebacButton">Managebac</a></li>
+				<li><a href="#tabs-3" id="biblionasiumButton">Biblionasium</a></li>
+				<li><a href="#tabs-4" id="newselaButton">Newsela</a></li>
 				<li><a href="#tabs-5">Proton</a></li>
 				<!--<li><a href="#tabs-6">Videos</a></li>-->
 				<li><a href="#tabs-7">Games</a></li>
@@ -198,13 +213,13 @@
 				<img class="headers" src="img/logo1568x782.jpg" width="784" height="391"/>-->
 			</div>
 			<div id="tabs-2" class="iframeWindow">
-				<iframe src="https://saintandrews.managebac.com/" class="iframeWindow"></iframe>
+				<iframe src="" class="iframeWindow" id="managebacIframe"></iframe>
 			</div>
 			<div id="tabs-3" class="iframeWindow">
-				<iframe src="https://www.biblionasium.com/" class="iframeWindow"></iframe>
+				<iframe src="" class="iframeWindow" id="biblionasiumIframe"></iframe>
 			</div>
 			<div id="tabs-4" class="iframeWindow">
-				<iframe src="http://www.newsela.com/" class="iframeWindow"></iframe>
+				<iframe src="" class="iframeWindow" id="newselaIframe"></iframe>
 			</div>
 			<div id="tabs-5">
 				<div class="accordion">					
