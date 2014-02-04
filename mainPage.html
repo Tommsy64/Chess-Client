@@ -53,6 +53,29 @@
 			fitToView	: true
 		});
 		
+		$( "#wordReverserInfo" )
+			.button()
+			.click(function( event ) {
+				window.open('https://github.com/Tommsy64/Word-Reverser/releases/tag/v1.0', '_blank');
+		});
+		
+		$( "#wordReverserDownload" )
+			.button()
+			.click(function( event ) {			
+			var downloadURL = function downloadURL(url) {
+				var hiddenIFrameID = 'hiddenDownloader',
+					iframe = document.getElementById(hiddenIFrameID);
+				if (iframe === null) {
+					iframe = document.createElement('iframe');
+					iframe.id = hiddenIFrameID;
+					iframe.style.display = 'none';
+					document.body.appendChild(iframe);
+				}
+				iframe.src = url;
+			};
+			downloadURL('https://github.com/Tommsy64/Word-Reverser/releases/download/v1.0/Word-Reverser.jar');
+		});
+		
 		/*$(".various").fancybox({
 			maxWidth	: 800,
 			maxHeight	: 600,
@@ -156,7 +179,8 @@
 				<li><a href="#tabs-5">Proton</a></li>
 				<!--<li><a href="#tabs-6">Videos</a></li>-->
 				<li><a href="#tabs-7">Games</a></li>
-				<li><a href="#tabs-8">Solver</a></li>
+				<li><a href="#tabs-8">Downloads</a></li>
+				<li><a href="#tabs-9">Solver</a></li>
 			</ul>
 			<div id="tabs-1">
 				<h1>News</h1>
@@ -306,6 +330,17 @@
 				</div>				
 			</div>
 			<div id="tabs-8">
+				<div class="accordion">			
+					<h3>Word Reverser</h3>
+					<div>
+						A simple application to reverse any text.
+						<br />
+						<button id="wordReverserDownload">Direct Download</button>
+						<button id="wordReverserInfo">Info</button>
+					</div>
+				</div>
+			</div>
+			<div id="tabs-9">
 				<script type="text/javascript" id="WolframAlphaScriptd17d6ee7faaa35c1397f60641f174cc8" src="http://www.wolframalpha.com/widget/widget.jsp?id=d17d6ee7faaa35c1397f60641f174cc8"></script>
 			</div>
 		</div>
