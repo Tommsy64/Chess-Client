@@ -1,391 +1,442 @@
-<!doctype html>
-<html lang="us">
-<head>
-	<meta charset="utf-8">
-	<title>Chess Client 1.0</title>
-	
-	<!--jQuery-->
-	<link href="css/ui-lightness/jquery-ui-1.10.3.custom.min.css" rel="stylesheet">
-	<script src="js/jquery/jquery-1.9.1.js"></script>
-	<script src="js/jquery/jquery.mousewheel-3.0.6.pack.js"></script>
-	<script src="js/jquery/jquery-ui-1.10.3.custom.min.js"></script>
-	
-	<!--Fancy Box-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <title>Carousel Template &middot; Bootstrap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Tommsy64">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <!-- Le styles -->
+  <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="css/StickyFooter.css" rel="stylesheet">
+  <style>
 
-		<!-- Add fancyBox main JS and CSS files -->
-		<script type="text/javascript" src="js/fancybox/jquery.fancybox.min.js"></script>
-		<link rel="stylesheet" href="css/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
 
-		<!-- Add Button helper (this is optional) -->
-		<link rel="stylesheet" type="text/css" href="css/fancybox/jquery.fancybox-buttons.css?v=1.0.5" />
-		<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+    body {
+      /*padding-bottom: 40px;*/
+      color: #5a5a5a;
+    }
 
-		<!-- Add Thumbnail helper (this is optional) -->
-		<link rel="stylesheet" type="text/css" href="css/fancybox/jquery.fancybox-thumbs.css?v=1.0.7" />
-		<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
 
-		<!-- Add Media helper (this is optional) -->
-		<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
-		
-	<!-- End of fancy box -->
-	
-	<!--Modified Date-->
-	<script src="js/dateModified/dateModified.js"></script>
-	
-	<script>
-	$(function() {
-		
-		$( "#button" ).button();
-		$( "#radioset" ).buttonset();
-		$( ".accordion" ).accordion();		
-		$( "#tabs" ).tabs();
-		
-		
-		$( "#progressbar" ).progressbar({
-			value: 20
-		});
-		
-		$('.fancybox').fancybox({
-			padding : 0,
-			openEffect  : 'elastic',
-			width		: '90%',
-			height		: '90%',
-			fitToView	: true
-		});
-		
-		$( "#wordReverserInfo" )
-			.button()
-			.click(function( event ) {
-				window.open('https://github.com/Tommsy64/Word-Reverser/releases/tag/v1.0', '_blank');
-		});
-		
-		$( "#wordReverserDownload" )
-			.button()
-			.click(function( event ) {			
-			var downloadURL = function downloadURL(url) {
-				var hiddenIFrameID = 'hiddenDownloader',
-					iframe = document.getElementById(hiddenIFrameID);
-				if (iframe === null) {
-					iframe = document.createElement('iframe');
-					iframe.id = hiddenIFrameID;
-					iframe.style.display = 'none';
-					document.body.appendChild(iframe);
-				}
-				iframe.src = url;
-			};
-			downloadURL('https://github.com/Tommsy64/Word-Reverser/releases/download/v1.0/Word-Reverser-Obf.jar');
-		});
-		
-		$( "#wsasButton" )
-			.click(function( event ) {
-			  $("#wsasIframe").attr("src","http://www.useducationtv.com/main.aspx?sid=18094&pid=21235");
-		});
-		
-		$( "#newselaButton" )
-			.click(function( event ) {
-			  $("#newselaIframe").attr("src","http://www.newsela.com/");
-		});
-		
-		$( "#biblionasiumButton" )
-			.click(function( event ) {
-			  $("#biblionasiumIframe").attr("src","https://www.biblionasium.com/");
-		});
-		
-		$( "#managebacButton" )
-			.click(function( event ) {
-			  $("#managebacIframe").attr("src","https://saintandrews.managebac.com/");
-		});
-		
-		/*$(".various").fancybox({
-			maxWidth	: 800,
-			maxHeight	: 600,
-			fitToView	: false,
-			width		: '70%',
-			height		: '70%',
-			autoSize	: false,
-			closeClick	: false,
-			openEffect	: 'none',
-			closeEffect	: 'none'
-		});*/
-		$("a[href$='.jpg'],a[href$='.jpeg'],a[href$='.png'],a[href$='.gif'],a[href$='.swf']").attr('rel', 'gallery').fancybox(); //Auto magically turn any links to images into fancyBoxes!
-	});
-	</script>
-	
-	<!--CSS -->
-	<style>
-	p.mainbodytext {
-		font-style:italic;
-		color:#7B7B7B;
-		}
-	.headers {
-		margin-top: 2em;
-	}
-	.text {
-		color:#353543;
-	}
-	.title {
-	    color:#004016;
-	}
-	#wrapper {
-		min-height: 100%;
-		font: 62.5% "Trebuchet MS", sans-serif;
-		margin: 50px;
-		margin-top: 21px;
-	}
-	#main {
-		/*overflow:scroll;
-		overflow-y:scroll;*/
-		overflow-x:hidden;
-		padding-bottom: 150px; /* must be same height as the footer */
-	}  
-	#subfooter { 
-		margin-top: -120px;
-	} 
-	footer { 
-		position: relative;
-		margin-top: -150px; /* negative value of footer height */
-		padding-bottom: -5px;
-		height: 150px;
-		clear:both;
-		width:100%;
-		height:80px;
-		position:absolute;
-		bottom:0;
-		left:0;
-		text-align:center; /* center horizontally */
-	} 
-	/*Opera Fix*/
-	body:before {
-		content:"";
-		height:100%;
-		float:left;
-		width:0;
-		margin-top:-32767px;
-	}
-	.iframeWindow {
-		height:75%;
-		width:99%;
-	}
-	</style>
 
-	<!--Google Analytics-->		
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
 
-	  ga('create', 'UA-46229693-1', 'tommsy64.github.io');
-	  ga('send', 'pageview');
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
 
-	</script>
-</head>
-<body>
+    }
 
-<div id="wrapper">
-	<div id="header">
-		<!--<img src="img/mainPageLogo.gif" align="center" />-->
-		<h1>Chess Client 1.0</h1>
-	</div>
-	
-	<div id="main">
-		<!-- Tabs -->
-		<div id="tabs">
-			<ul>
-				<li><a href="#tabs-1">Home</a></li>
-				<li><a href="#tabs-2" id="managebacButton">Managebac</a></li>
-				<li><a href="#tabs-3" id="biblionasiumButton">Biblionasium</a></li>
-				<li><a href="#tabs-4" id="newselaButton">Newsela</a></li>
-				<li><a href="#tabs-5">Proton</a></li>
-				<!--<li><a href="#tabs-6">Videos</a></li>-->
-				<li><a href="#tabs-7">Games</a></li>
-				<li><a href="#tabs-8">Downloads</a></li>
-				<!--<li><a href="#tabs-9">Solver</a></li>-->
-				<li><a href="#tabs-10" id="wsasButton">WSAS</a></li>
-			</ul>
-			<div id="tabs-1">
-				<h1>News</h1>
-				<h2>White House Film Festival</h2>
-				<iframe width="853" height="480" src="//www.youtube.com/embed/8eiovBifBZE?rel=0" frameborder="0" allowfullscreen></iframe>
-				<br />
-				New Chess Client Wiki right <a href="https://github.com/Tommsy64/Chess-Client/wiki">here</a>!
-				<!--<br />
-				<img class="headers" src="img/logo1568x782.jpg" width="784" height="391"/>-->
-			</div>
-			<div id="tabs-2" class="iframeWindow">
-				<iframe src="" class="iframeWindow" id="managebacIframe"></iframe>
-			</div>
-			<div id="tabs-3" class="iframeWindow">
-				<iframe src="" class="iframeWindow" id="biblionasiumIframe"></iframe>
-			</div>
-			<div id="tabs-4" class="iframeWindow">
-				<iframe src="" class="iframeWindow" id="newselaIframe"></iframe>
-			</div>
-			<div id="tabs-5">
-				<div class="accordion">					
-					<h3>Attraction</h3>
-					<div>
-						<a href="js/proton/configs/attraction1.html" class="fancybox fancybox.iframe"><h1>Normal</h1></a>
-						<br>
-						<a href="js/proton/configs/attraction1.html"><h1>Fullscreen</h1></a>
-					</div>
-					
-					<h3>Collision</h3>
-					<div>
-						<a href="js/proton/configs/collision1.html" class="fancybox fancybox.iframe"><h1>Normal</h1></a>
-						<br>
-						<a href="js/proton/configs/collision1.html"><h1>Fullscreen</h1></a>
-					</div>
-					
-					<h3>Image Target</h3>
-					<div>
-						<a href="js/proton/configs/imageTarget.html" class="fancybox fancybox.iframe"><h1>Normal</h1></a>
-						<br>
-						<a href="js/proton/configs/imageTarget.html"><h1>Fullscreen</h1></a>
-					</div>
-					
-					<h3>Pixel Render Logo</h3>
-					<div>
-						<a href="js/proton/configs/pixelrender-logo.html" class="fancybox fancybox.iframe"><h1>Normal</h1></a>
-						<br>
-						<a href="js/proton/configs/pixelrender-logo.html"><h1>Fullscreen</h1></a>
-					</div>
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
 
-					<h3>Pixel Render</h3>
-					<div>
-						<a href="js/proton/configs/pixelrender.html" class="fancybox fancybox.iframe"><h1>Normal</h1></a>
-						<br>
-						<a href="js/proton/configs/pixelrender.html"><h1>Fullscreen</h1></a>
-					</div>
-				</div>
-			</div>
-			<!--<div id="tabs-6">
-				<video width="320" height="240" controls>
-				  <source src="videos/kitty.mp4" type="video/mp4">
-				Your browser does not support the video tag. Use Google Chrome.
-				</video>
-			</div>-->
-			<div id="tabs-7">
-				<a href="http://www.learn4good.com/cms/upload/games/sports/swf/runandgun.swf" data-fancybox-group="RunNGun" class="fancybox">RunNGun</a>
-				<a href="adobe/tanks.swf" data-fancybox-group="tanks" class="fancybox">Tanks</a>
-				<br/>
-				<div class="accordion">			
-					<h3>Cookie Clicker</h3>
-					<div>
-						<a href="http://orteil.dashnet.org/cookieclicker/" class="fancybox fancybox.iframe">Normal View</a>
-						<br>
-						<a href="adobe/cookie-clicker/cookie-clicker.html">Fullscreen</a>
-					</div>
-							
-					<h3>Duck Life</h3>
-					<div>
-						<a href="adobe/duck-life-1.swf" data-fancybox-group="DuckLife1">Duck Life 1</a>
-						<br/>
-						<a href="adobe/duck-life-2.swf" data-fancybox-group="DuckLife2">Duck Life 2</a>
-						<br/>
-						<a href="adobe/duck-life-3.swf" data-fancybox-group="DuckLife3">Duck Life 3</a>
-						<br/>
-						<a href="adobe/duck-life-4.swf" data-fancybox-group="DuckLife4">Duck Life 4</a>
-					</div>
-			
-					<h3>Run</h3>
-					<div>
-						<a href="adobe/run.swf" data-fancybox-group="run">Run</a>
-						<br/>
-						<a href="http://www.coolmath-games.com/0-run-2/Run2a.swf" data-fancybox-group="run2">Run 2</a> 
-					</div>
-			
-					<h3>Happy Wheels</h3>
-					<div>
-						<a href="adobe/HappyWheelsDemo.swf" data-fancybox-group="HappyWheelsDemo">Happy Wheels Demo</a>
-						<br/>
-						<a href="adobe/HappyWheelsFull/Happy-Wheels.swf" data-fancybox-group="HappyWheelsFull">Happy Wheels Full</a>
-					</div>
-			
-					<h3>Blosics</h3>
-					<div>
-						<a href="adobe/blosics.swf" data-fancybox-group="Blosics">Blosics</a>
-						<br/>
-						<a href="adobe/blosics2.swf" data-fancybox-group="Blosics2">Blosics 2</a>
-					</div>
-			
-					<h3>Pyro</h3>
-					<div>
-						<a href="adobe/pyro.swf" data-fancybox-group="Pyro">Pyro</a>
-					</div>
-			
-					<h3>Achievement Unlocked</h3>
-					<div>
-						<a href="adobe/achievement-unlocked-1.swf" data-fancybox-group="AchievementUnlocked1">Achievement Unlocked 1</a>
-						<br/>
-						<a href="adobe/achievement-unlocked-2.swf" data-fancybox-group="AchievementUnlocked2">Achievement Unlocked 2</a>
-					</div>
-			
-					<h3>Bloons</h3>
-					<div>
-						<a href="adobe/bloons.swf" data-fancybox-group="Bloons">Bloons</a>
-						<br/>
-						<a href="adobe/bloonstowerdefense4.swf" data-fancybox-group="BloonsTowerDefense4">Bloons Tower Defense 4</a>
-						<br/>
-						<a href="adobe/btd5.swf" data-fancybox-group="BloonsTowerDefense5">Bloons Tower Defense 5 (Not Working)</a>
-						<br/>
-						<a href="adobe/bloonsTd5.html"data-fancybox-group="BloonsTowerDefense5Working" class="fancybox fancybox.iframe">Bloons Tower Defense 5</a>
-					</div>
-			
-					<h3>Interactive Buddy</h3>
-					<div>
-						<a href="adobe/interactivebuddy.swf" data-fancybox-group="InteractiveBuddy1">Interactive Buddy 1</a>
-					</div>
-			
-					<h3>Upgrade Complete</h3>
-					<div>
-						<a href="adobe/UpgradeComplete1.swf" data-fancybox-group="UpgradeComplete1">Upgrade Complete 1</a>
-						<br/>
-						<a href="adobe/UpgradeComplete2.swf" data-fancybox-group="UpgradeComplete2">Upgrade Complete 2</a>
-					</div>
-					
-					<h3>Cash Machine</h3>
-					<div>
-						<a href="http://www.andkon.com/arcade/tetris/cashmachine/cashmachine.swf" data-fancybox-group="cashmachine">Cash Machine</a>
-					</div>
-				</div>				
-			</div>
-			<div id="tabs-8">
-				<div class="accordion">			
-					<h3>Word Reverser</h3>
-					<div>
-						A simple application to reverse any text.
-						<br />
-						<button id="wordReverserDownload">Direct Download</button>
-						<button id="wordReverserInfo">Info</button>
-					</div>
-				</div>
-			</div>
-			<!--<div id="tabs-9">
-				<script type="text/javascript" id="WolframAlphaScriptd17d6ee7faaa35c1397f60641f174cc8" src="http://www.wolframalpha.com/widget/widget.jsp?id=d17d6ee7faaa35c1397f60641f174cc8"></script>
-			</div>-->
-			<div id="tabs-10" class="iframeWindow">
-				<iframe id="wsasIframe" src="" class="iframeWindow"></iframe>
-			</div>
-		</div>
-	</div>
-	
-	<!--<div id="subfooter">
-		<object type="application/x-shockwave-flash" data="https://clients4.google.com/voice/embed/webCallButtonVm" width="230" height="85"><param name="movie" value="https://clients4.google.com/voice/embed/webCallButtonVm" /><param name="wmode" value="transparent" /><param name="FlashVars" value="id=917daf452135bc082de66eb353afcbcc65bf2be9&style=0" /></object>
-	</div>	-->
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
 
-	<footer>
-			<div class="ui-widget">
-				<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em; margin-bottom: 10px;">
-					<div class="authors">
-						<p>Created by Tommsy64 and Dichlorodiphen</p>
-					</div>
-					<div id="lastModified">
-						<p>Error</p>
-					</div>
-				</div>
-			</div>
-	</footer>
-</div>
-</body>
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+    </style>
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script>
+    <![endif]-->
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="bootstrap/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="bootstrap/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="bootstrap/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="bootstrap/ico/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="bootstrap/ico/favicon.png">
+  <script type="text/javascript" src="ScriptLibrary/jquery-latest.pack.js"></script>
+  <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+  </head>
+
+  <body>
+
+
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#">Tech Website</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li class="nav-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+    <!-- Part 1: Wrap all page content here -->
+    <div id="wrap">
+    
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="bootstrap/img/examples/slide-01.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Example headline.</h1>
+              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <a class="btn btn-large btn-primary" href="#">Sign up today</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="bootstrap/img/examples/slide-02.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline.</h1>
+              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <a class="btn btn-large btn-primary" href="#">Learn more</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="bootstrap/img/examples/slide-03.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>One more for good measure.</h1>
+              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <a class="btn btn-large btn-primary" href="#">Browse gallery</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div><!-- /.carousel -->
+
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="span4">
+          <img class="img-circle" data-src="holder.js/140x140">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" data-src="holder.js/140x140">
+          <h2>Heading</h2>
+          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" data-src="holder.js/140x140">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-right" src="bootstrap/img/examples/browser-icon-chrome.png">
+        <h2 class="featurette-heading">First featurette headling. <span class="muted">It'll blow your mind.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-left" src="bootstrap/img/examples/browser-icon-firefox.png">
+        <h2 class="featurette-heading">Oh yeah, it's that good. <span class="muted">See for yourself.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-right" src="bootstrap/img/examples/browser-icon-safari.png">
+        <h2 class="featurette-heading">And lastly, this one. <span class="muted">Checkmate.</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+    </div>
+
+    </div><!-- /.container -->
+
+      <!-- FOOTER -->      
+	<div id="footer">
+      <div class="container">
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; 				<a href="#">Terms</a></p>
+      </div>
+    </div>
+
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+    <script src="bootstrap/js/holder/holder.js"></script>
+  </body>
 </html>
