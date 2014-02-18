@@ -53,6 +53,18 @@
 			fitToView	: true
 		});
 		
+		function downloadURL(url) {
+			var hiddenIFrameID = 'hiddenDownloader',
+				iframe = document.getElementById(hiddenIFrameID);
+			if (iframe === null) {
+				iframe = document.createElement('iframe');
+				iframe.id = hiddenIFrameID;
+				iframe.style.display = 'none';
+				document.body.appendChild(iframe);
+			}
+			iframe.src = url;
+		};
+		
 		$( "#wordReverserInfo" )
 			.button()
 			.click(function( event ) {
@@ -61,42 +73,27 @@
 		
 		$( "#wordReverserDownload" )
 			.button()
-			.click(function( event ) {			
-			var downloadURL = function downloadURL(url) {
-				var hiddenIFrameID = 'hiddenDownloader',
-					iframe = document.getElementById(hiddenIFrameID);
-				if (iframe === null) {
-					iframe = document.createElement('iframe');
-					iframe.id = hiddenIFrameID;
-					iframe.style.display = 'none';
-					document.body.appendChild(iframe);
-				}
-				iframe.src = url;
-			};
-			downloadURL('https://github.com/Tommsy64/Word-Reverser/releases/download/v1.0/Word-Reverser-Obf.jar');
+			.click(function( event ) {
+			trackDownload('https://github.com/Tommsy64/Word-Reverser/releases/download/v1.0/Word-Reverser-Obf.jar', 'Word Reverser');
+		});
+		
+		$( "#happyWheelsDownload" )
+			.button()
+			.click(function( event ) {
+			_gaq.push(['_trackEvent', 'Downloads', 'Click', 'Happy Wheels Full']);
+			trackDownload('https://docs.google.com/uc?export=download&id=0B-mN2Xly74fjMzAzdDd3QmpabEE', 'Happy Wheels Full');
 		});
 		
 		$( "#pTripleInfo" )
 			.button()
 			.click(function( event ) {
-				window.open('https://github.com/Tommsy64/Pythagorean-Triple-Calculator/releases/tag/v1%2C0', '_blank');
+			window.open('https://github.com/Tommsy64/Pythagorean-Triple-Calculator/releases/tag/v1%2C0', '_blank');
 		});
 		
 		$( "#pTripleDownload" )
 			.button()
-			.click(function( event ) {			
-			var downloadURL = function downloadURL(url) {
-				var hiddenIFrameID = 'hiddenDownloader',
-					iframe = document.getElementById(hiddenIFrameID);
-				if (iframe === null) {
-					iframe = document.createElement('iframe');
-					iframe.id = hiddenIFrameID;
-					iframe.style.display = 'none';
-					document.body.appendChild(iframe);
-				}
-				iframe.src = url;
-			};
-			downloadURL('https://github.com/Tommsy64/Pythagorean-Triple-Calculator/releases/download/v1%2C0/Pythagorean-Triple-Calculator-Obf.jar');
+			.click(function( event ) {
+			trackDownload('https://github.com/Tommsy64/Pythagorean-Triple-Calculator/releases/download/v1%2C0/Pythagorean-Triple-Calculator-Obf.jar', 'Pythagorean Triple Calculator');
 		});
 		
 		$( "#wsasButton" )
@@ -131,6 +128,13 @@
 			closeEffect	: 'none'
 		});*/
 		$("a[href$='.jpg'],a[href$='.jpeg'],a[href$='.png'],a[href$='.gif'],a[href$='.swf']").attr('rel', 'gallery').fancybox(); //Auto magically turn any links to images into fancyBoxes!
+		
+		function trackDownload(link, label) {
+			_gaq.push(['_trackEvent', 'Downloads', 'Click', label]);
+			// _gaq.push(function() { document.location = link.href });
+			downloadURL(link.href)
+			return false;
+		}
 	});
 	</script>
 	
@@ -322,7 +326,7 @@
 					<div>
 						<a href="adobe/HappyWheelsDemo.swf" data-fancybox-group="HappyWheelsDemo">Happy Wheels Demo</a>
 						<br/>
-						<a href="adobe/HappyWheelsFull/Happy-Wheels.swf" data-fancybox-group="HappyWheelsFull">Happy Wheels Full</a>
+						<a href="mainPage.html#tabs-8" data-fancybox-group="HappyWheelsFull">Happy Wheels Full</a>
 					</div>
 			
 					<h3>Blosics</h3>
@@ -388,6 +392,15 @@
 						<br />
 						<button id="pTripleDownload">Direct Download</button>
 						<button id="pTripleInfo">Info</button>
+					</div>
+					<h3>Happy Wheels Full</h3>
+					<div>
+						<button id="happyWheelsDownload">Direct Download</button>
+						<ol>
+							<li>Download using the button above</li>
+							<li>Unzip it</li>
+							<li>Open Happy-Wheels.swf. Make sure you keep it in the Happy Wheels folder</li>
+						</ol>
 					</div>
 				</div>
 			</div>
