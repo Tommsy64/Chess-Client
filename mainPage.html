@@ -130,7 +130,7 @@
 		$("a[href$='.jpg'],a[href$='.jpeg'],a[href$='.png'],a[href$='.gif'],a[href$='.swf']").attr('rel', 'gallery').fancybox(); //Auto magically turn any links to images into fancyBoxes!
 		
 		function trackDownload(link, label) {
-			_gaq.push(['_trackEvent', 'Downloads', 'Click', label]);
+			ga('send', 'event', 'button', 'click', label, 1);
 			// _gaq.push(function() { document.location = link.href });
 			downloadURL(link.href)
 			return false;
@@ -204,7 +204,6 @@
 
 	  ga('create', 'UA-46229693-1', 'tommsy64.github.io');
 	  ga('send', 'pageview');
-
 	</script>
 </head>
 <body>
