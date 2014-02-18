@@ -131,7 +131,7 @@
 		function trackDownload(link, label) {
 			ga('send', 'event', 'button', 'click', label, 1);
 			// _gaq.push(function() { document.location = link.href });
-			downloadURL(link.href)
+			downloadURL(link)
 			return false;
 		}
 	});
