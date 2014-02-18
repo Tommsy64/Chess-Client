@@ -76,6 +76,29 @@
 			downloadURL('https://github.com/Tommsy64/Word-Reverser/releases/download/v1.0/Word-Reverser-Obf.jar');
 		});
 		
+		$( "#pTripleInfo" )
+			.button()
+			.click(function( event ) {
+				window.open('https://github.com/Tommsy64/Pythagorean-Triple-Calculator/releases/tag/v1%2C0', '_blank');
+		});
+		
+		$( "#pTripleDownload" )
+			.button()
+			.click(function( event ) {			
+			var downloadURL = function downloadURL(url) {
+				var hiddenIFrameID = 'hiddenDownloader',
+					iframe = document.getElementById(hiddenIFrameID);
+				if (iframe === null) {
+					iframe = document.createElement('iframe');
+					iframe.id = hiddenIFrameID;
+					iframe.style.display = 'none';
+					document.body.appendChild(iframe);
+				}
+				iframe.src = url;
+			};
+			downloadURL('https://github.com/Tommsy64/Pythagorean-Triple-Calculator/releases/download/v1%2C0/Pythagorean-Triple-Calculator-Obf.jar');
+		});
+		
 		$( "#wsasButton" )
 			.click(function( event ) {
 			  $("#wsasIframe").attr("src","http://www.useducationtv.com/main.aspx?sid=18094&pid=21235");
@@ -358,6 +381,13 @@
 						<br />
 						<button id="wordReverserDownload">Direct Download</button>
 						<button id="wordReverserInfo">Info</button>
+					</div>
+					<h3>Pythagorean Triples Calculator</h3>
+					<div>
+						A simple application to create Pythagorean triples.
+						<br />
+						<button id="pTripleDownload">Direct Download</button>
+						<button id="pTripleInfo">Info</button>
 					</div>
 				</div>
 			</div>
